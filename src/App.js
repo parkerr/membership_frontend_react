@@ -46,48 +46,70 @@ class App extends Component {
   render() {
     return (
       <div id="wrapper">
+		{ this.renderHeader() }
         { this.renderNavigation() }
         { this.renderBody() }
       </div>
     );
   }
 
+  renderHeader() {
+	  return (
+	  <header id="header">
+		<div className="mui-appbar mui--appbar-line-height">
+			<div className="mui-container-fluid">
+			<a className="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+			<a className="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+			<span className="mui--text-title">Booker.io</span>
+			</div>
+		</div>
+	  </header>
+	  )
+  }
+  
   renderNavigation() {
 
       return (
+<div id="sidedrawer" className="mui--no-user-select hide-sidedrawer">
+	<div id="sidedrawer-brand" className="mui--appbar-line-height">
+			<span className="mui--text-title">Booker.io</span>
+		</div>
+		<div className="mui-divider"></div>
+		<ul>
+			<li>
+				<strong>Admin</strong>
+				<ul>
+					<li><Link to="/" onClick={ this.showInternalLink }>Home</Link></li>
+					<li><Link to="/members" activeClassName="active" onClick={ this.showInternalLink }>Members</Link></li>
 
-        <div id="sidebar-wrapper">
-            <ul className="sidebar-nav">
-				<li className="sidebar-brand">
-                    <a href="#">
-                        Membership
-                    </a>
-                </li>
-                <li><Link to="/" onClick={ this.showInternalLink }>Home</Link></li>
-                <li><Link to="/members" activeClassName="active" onClick={ this.showInternalLink }>Members</Link></li>
-            </ul>
-        </div>
+				</ul>
+			</li>
+			<li>
+				<strong>Main</strong>
+				<ul>
+				<li><a href="#">Item 1</a></li>
+				<li><a href="#">Item 2</a></li>
+				<li><a href="#">Item 3</a></li>
+				</ul>
+			</li>
+  
+		</ul>
+	 </div> 
+
 
       )
 
   }
 
   renderBody() {
-      if (this.state.iframeLink) {
-        return (
-          <div id="page-content-wrapper">
-            <div className="container-fluid">
-            <iframe src={ this.state.iframeLink } style={{height: this.state.bodyHeight, border: 0}} seamless frameBorder="0"></iframe>
-			</div>
-          </div>
-        )
-      }
+
       return (
-		<div id="page-content-wrapper">
-		<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-            <div className="container-fluid">
+		<div id="content-wrapper">
+            <div className="mui--appbar-height"></div>
+			<div className="mui-container-fluid">
+			<br></br>
                 { this.props.children }
-            </div>
+			</div>	
         </div>
 		)
     
