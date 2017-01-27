@@ -83,8 +83,7 @@ class App extends Component {
 				<ul>
                 <li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">event</i><Link to="/calendar" activeClassName="active" onClick={ this.showInternalLink }>   Calendar</Link></li>
 				<li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">event_note</i><Link to="/diary" activeClassName="active" onClick={ this.showInternalLink }>   My Diary</Link></li>
-				<li><a href="#">Item 2</a></li>
-				<li><a href="#">Item 3</a></li>
+				<li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">person</i><Link to="/account" activeClassName="active" onClick={ this.showInternalLink }>   My Account</Link></li>
 				</ul>
 			</li>
 			<li>
