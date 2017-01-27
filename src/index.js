@@ -4,7 +4,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import App from './App';
 import Members from './members/members';
 import Setup from './setup/setup';
-
+import Calendar_container from './calendar/calendar_container'
 
 const NoMatch = (props) => {
   return <div>Page "{ props.routeParams.splat }" Not found</div>
@@ -12,7 +12,8 @@ const NoMatch = (props) => {
 
 const allTopLevelRoutes = {
   members: <Route key="members" path="members" component={ Members } />,
-  setup: <Route key="setup" path="setup" component={ Setup } />
+  setup: <Route key="setup" path="setup" component={ Setup } />,
+  calendar: <Route key="calendar" path="calendar" component={ Calendar_container } />
 }
 
 class AppRoutes extends React.Component {
@@ -26,7 +27,7 @@ class AppRoutes extends React.Component {
 
   componentWillMount() {
     // TODO ajax request to fetch allowed_routes.
-    this.setState({allowed_routes: ['members','setup']})
+    this.setState({allowed_routes: ['members','setup','calendar']})
   }
 
   render() {
