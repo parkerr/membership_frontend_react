@@ -31,7 +31,9 @@ class Members extends Component {
                 <a href="#" className="mui-pull-right mui-text-muted"><em className="fa"></em></a>
               </div>
               <div className="mui-panel-body mui-text-center">
-                <img src={ house } alt="Contact" className="mui-center-block img-responsive img-rounded thumb64"/>
+
+                <img src={ house } alt="Contact" className="mui-center-block circle thumb64"/>
+
                 <h4>{ member.memberName }</h4>
                 <p>Email:{ member.memberEmail}</p>
               </div>
