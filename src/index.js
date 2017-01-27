@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router'
 import App from './App';
 import Members from './members/members';
+import Setup from './setup/setup';
 
 
 const NoMatch = (props) => {
@@ -11,6 +12,7 @@ const NoMatch = (props) => {
 
 const allTopLevelRoutes = {
   members: <Route key="members" path="members" component={ Members } />,
+  setup: <Route key="setup" path="setup" component={ Setup } />
 }
 
 class AppRoutes extends React.Component {
@@ -24,7 +26,7 @@ class AppRoutes extends React.Component {
 
   componentWillMount() {
     // TODO ajax request to fetch allowed_routes.
-    this.setState({allowed_routes: ['members']})
+    this.setState({allowed_routes: ['members','setup']})
   }
 
   render() {

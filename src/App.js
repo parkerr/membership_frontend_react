@@ -54,8 +54,8 @@ class App extends Component {
   }
 
   renderHeader() {
-	  return (
-	  <header id="header">
+	  return (   
+	  <header id="header">  
 		<div className="mui-appbar mui--appbar-line-height">
 			<div className="mui-container-fluid">
 			<a className="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
@@ -64,6 +64,7 @@ class App extends Component {
 			</div>
 		</div>
 	  </header>
+
 	  )
   }
   
@@ -76,20 +77,20 @@ class App extends Component {
 		</div>
 		<div className="mui-divider"></div>
 		<ul>
-			<li>
-				<strong>Admin</strong>
-				<ul>
-					<li><Link to="/" onClick={ this.showInternalLink }>Home</Link></li>
-					<li><Link to="/members" activeClassName="active" onClick={ this.showInternalLink }>Members</Link></li>
 
-				</ul>
-			</li>
 			<li>
 				<strong>Main</strong>
 				<ul>
 				<li><a href="#">Item 1</a></li>
 				<li><a href="#">Item 2</a></li>
 				<li><a href="#">Item 3</a></li>
+				</ul>
+			</li>
+			<li>
+				<strong>Admin</strong>
+				<ul>
+					<li><Link to="/setup" activeClassName="active" onClick={ this.showInternalLink }>Setup</Link></li>
+					<li><Link to="/members" activeClassName="active" onClick={ this.showInternalLink }>Members</Link></li>
 				</ul>
 			</li>
   
