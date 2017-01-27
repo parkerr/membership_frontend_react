@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { members } from '../sampledata';
-import house from '../img/house.jpg'
+import girl from '../img/girl.png'
+import boy from '../img/boy.png'
 
 class Members extends Component {
 
@@ -32,7 +33,7 @@ class Members extends Component {
               </div>
               <div className="mui-panel-body mui-text-center">
 
-                <img src={ house } alt="Contact" className="mui-center-block circle thumb64"/>
+                <img src={ member.memberName === 'Kuldeep'? girl : boy } alt="Contact" className="mui-center-block circle"/>
 
                 <h4>{ member.memberName }</h4>
                 <p>Email:{ member.memberEmail}</p>
