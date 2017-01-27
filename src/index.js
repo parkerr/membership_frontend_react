@@ -5,6 +5,7 @@ import App from './App';
 import Members from './members/members';
 import Setup from './setup/setup';
 import Calendar_container from './calendar/calendar_container'
+import Diary_container from './diary/diary_container'
 
 const NoMatch = (props) => {
   return <div>Page "{ props.routeParams.splat }" Not found</div>
@@ -13,7 +14,8 @@ const NoMatch = (props) => {
 const allTopLevelRoutes = {
   members: <Route key="members" path="members" component={ Members } />,
   setup: <Route key="setup" path="setup" component={ Setup } />,
-  calendar: <Route key="calendar" path="calendar" component={ Calendar_container } />
+  calendar: <Route key="calendar" path="calendar" component={ Calendar_container } />,
+  diary: <Route key="diary" path="diary" component={ Diary_container } />
 }
 
 class AppRoutes extends React.Component {
@@ -27,7 +29,7 @@ class AppRoutes extends React.Component {
 
   componentWillMount() {
     // TODO ajax request to fetch allowed_routes.
-    this.setState({allowed_routes: ['members','setup','calendar']})
+    this.setState({allowed_routes: ['members','setup','calendar','diary']})
   }
 
   render() {

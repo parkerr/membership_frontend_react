@@ -81,8 +81,8 @@ class App extends Component {
 			<li>
 				<strong>Main</strong>
 				<ul>
-                <li><Link to="/calendar" activeClassName="active" onClick={ this.showInternalLink }>Calendar</Link></li>
-				<li><a href="#">Item 1</a></li>
+                <li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">event</i><Link to="/calendar" activeClassName="active" onClick={ this.showInternalLink }>   Calendar</Link></li>
+				<li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">event_note</i><Link to="/diary" activeClassName="active" onClick={ this.showInternalLink }>   My Diary</Link></li>
 				<li><a href="#">Item 2</a></li>
 				<li><a href="#">Item 3</a></li>
 				</ul>
@@ -90,8 +90,8 @@ class App extends Component {
 			<li>
 				<strong>Admin</strong>
 				<ul>
-					<li><Link to="/setup" activeClassName="active" onClick={ this.showInternalLink }>Setup</Link></li>
-					<li><Link to="/members" activeClassName="active" onClick={ this.showInternalLink }>Members</Link></li>
+					<li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">settings</i><Link to="/setup" activeClassName="active" onClick={ this.showInternalLink }>   Setup</Link></li>
+					<li><i className="material-icons md-18 vertical-align-middle padding-bottom-3">group</i><Link to="/members" activeClassName="active" onClick={ this.showInternalLink }>   Members</Link></li>
 				</ul>
 			</li>
   
