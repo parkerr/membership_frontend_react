@@ -4,7 +4,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import App from './App';
 import Members from './members/members';
 import Setup from './setup/setup';
-import Calendar_container from './calendar/calendar_container'
+import CalendarContainer from './calendar/calendarcontainer'
 import Diary_container from './diary/diary_container'
 import Account_container from './account/account_container'
 
@@ -15,7 +15,7 @@ const NoMatch = (props) => {
 const allTopLevelRoutes = {
   members: <Route key="members" path="members" component={ Members } />,
   setup: <Route key="setup" path="setup" component={ Setup } />,
-  calendar: <Route key="calendar" path="calendar" component={ Calendar_container } />,
+  calendar: <Route key="calendar" path="calendar" component={ CalendarContainer } />,
   diary: <Route key="diary" path="diary" component={ Diary_container } />,
   account: <Route key="account" path="account" component={ Account_container } />
 }

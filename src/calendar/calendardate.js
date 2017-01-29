@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Calendar_date extends Component {
+class CalendarDate extends Component {
 
   constructor(props, context) {
     super(props, context)
@@ -35,7 +35,7 @@ class Calendar_date extends Component {
           <tbody>
             <tr style={{height:"50px"}}>
               <td width="20%" className="mui--align-middle mui--text-right">
-                <button type="button" className="mui-col-md-1 mui-col-md-offset-3 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveback } >
+                <button type="button" className="mui-col-md-5 mui-col-md-offset-6 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveback } >
                   <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_left</i>
                 </button>
               </td>
@@ -43,24 +43,17 @@ class Calendar_date extends Component {
                 {this.state.date.toDateString() }
               </td>
               <td width="20%" className="mui--align-middle mui--text-left">
-                <button className="mui-col-md-1 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveforward} >
+                <button className="mui-col-md-5 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveforward} >
                   <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_right</i>
                 </button>
               </td>
             </tr>     
           </tbody>
-          </table>
-
-
-          
-          
-        </div>
-        <div className="mui-row">
-
+          </table>          
         </div>
       </div>
     )
   }
 }
 
-export default Calendar_date
+export default CalendarDate
