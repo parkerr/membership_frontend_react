@@ -29,8 +29,35 @@ class Calendar_date extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row"><button type="button" className="mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveback } ><i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_left</i></button> {this.state.date.toDateString() } <button className="mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveforward} ><i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_right</i></button></div>
+      <div className="mui-panel">
+        <div className="mui-row">
+          <table width="100%">
+          <tbody>
+            <tr style={{height:"50px"}}>
+              <td width="20%" className="mui--align-middle mui--text-right">
+                <button type="button" className="mui-col-md-1 mui-col-md-offset-3 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveback } >
+                  <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_left</i>
+                </button>
+              </td>
+              <td width="60%" className="mui--align-middle mui--text-center">
+                {this.state.date.toDateString() }
+              </td>
+              <td width="20%" className="mui--align-middle mui--text-left">
+                <button className="mui-col-md-1 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveforward} >
+                  <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_right</i>
+                </button>
+              </td>
+            </tr>     
+          </tbody>
+          </table>
+
+
+          
+          
+        </div>
+        <div className="mui-row">
+
+        </div>
       </div>
     )
   }

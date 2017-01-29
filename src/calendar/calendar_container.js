@@ -14,7 +14,7 @@ class Calendar_container extends Component {
 
   render() {
       return (
-        <div>
+        <div className="mui-container-fluid">
           <p>Calendar Screen</p>
           <Calendar_date />
       </div>
