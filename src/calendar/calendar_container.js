@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Calendar_date from './calendar_date';
 
 class Calendar_container extends Component {
 
@@ -16,6 +16,7 @@ class Calendar_container extends Component {
       return (
         <div>
           <p>Calendar Screen</p>
+          <Calendar_date />
       </div>
   )
     
