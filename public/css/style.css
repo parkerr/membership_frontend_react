@@ -27,6 +27,10 @@ buttons {
     padding-bottom: 3px;
 }
 
+.no-padding {
+    padding-left: 0;
+	padding-right: 0;
+}
 
 
 /* Rules for sizing the icon. */

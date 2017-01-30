@@ -19,12 +19,14 @@ class CalendarContainer extends Component {
           <p>Calendar Screen</p>
           <CalendarDate />
           <div className="mui-panel">
-          <CalendarTimebar height={60}/>
-          <CalendarTimebar height={40}/>
-          <CalendarTimebar height={40}/>
-          <CalendarTimebar height={40}/>
-          <CalendarTimebar height={40}/>
-          <CalendarTimebar height={40}/>
+		  <div className="row">
+          <CalendarTimebar height={60} padder={0}/>
+          <CalendarTimebar height={40} padder={20}/>
+          <CalendarTimebar height={40} padder={0}/>
+          <CalendarTimebar height={40} padder={10}/>
+          <CalendarTimebar height={40} padder={20}/>
+          <CalendarTimebar height={40} padder={0}/>
+		  </div>
           </div>
       </div>
   )
