@@ -25,6 +25,7 @@ class CalendarTimebar extends Component {
 
   render() {
 	  const renderedSlots = []
+	  //padder is the start position
 	  let h = this.props.padder
 	  for (var i = 900; i <= 2000; i=i+100) {
       renderedSlots.push(this.renderTimeSliceGroup(i, h, i))
