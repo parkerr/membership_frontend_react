@@ -24,9 +24,9 @@ class CalendarContainer extends Component {
           <CalendarTimebar height={60} padder={0}/>
           <CalendarItemslots height={40} padder={20} interval={40} starttime={920} starthour={9} startminute={20}/>
           <CalendarItemslots height={40} padder={0} interval={40} starttime={900} starthour={9} startminute={0}/>
-          <CalendarItemslots height={40} padder={10} interval={40} starttime={910} starthour={9} startminute={10}/>
+          <CalendarItemslots height={10} padder={10} interval={10} starttime={910} starthour={9} startminute={10}/>
           <CalendarItemslots height={40} padder={20} interval={40} starttime={920} starthour={9} startminute={20}/>
-          <CalendarItemslots height={40} padder={0} interval={30} starttime={900} starthour={9} startminute={0}/>
+          <CalendarItemslots height={30} padder={0} interval={30} starttime={900} starthour={9} startminute={0}/>
 		  </div>
           </div>
       </div>
