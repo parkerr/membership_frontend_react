@@ -30,14 +30,14 @@ class CalendarDate extends Component {
   render() {
     return (
 
-        <div className="mui-row mui--text-center mui--text-dark mui--text-subhead">
+        <div className="mui-row mui--text-center mui--text-dark mui--text-subhead mui--align-middle">
             <button className="mui-btn mui-btn--small mui-btn--primary mui-btn--flat" onClick={ this.moveback} >
                 <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_left</i>
             </button> 
             {this.state.date.toDateString() }
             <button className="mui-btn mui-btn--small mui-btn--primary mui-btn--flat"  onClick={ this.moveforward} >                
                 <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_right</i>
-            </button>  
+            </button>        
         </div>        
 
 

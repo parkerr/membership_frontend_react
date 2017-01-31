@@ -16,8 +16,8 @@ class CalendarTimebar extends Component {
     return (
 	
 		<g key={key}>
-		<rect key={key} width={100} y={y} height={this.props.height} fill={'#F0F0F0'} stroke={'#E0E0E0'} strokeWidth={1}/>
-		<text x="1" y={y + 10} fontFamily="Verdana" fontSize="8" fill="black" >{timeDisplay}</text>
+		<rect key={key} width={100} y={y} height={this.props.height} fill={'#2196F3'} stroke={'#E0E0E0'} strokeWidth={1}/>
+		<text x="1" y={y + 10} className="mui--text-dark" fontSize="9" fontWeight="bold" fill={'#fff'}>{timeDisplay}</text>
 		</g>
     )
   }
@@ -33,8 +33,8 @@ class CalendarTimebar extends Component {
     }
 	    
       return (
-        <div  className="mui-col-md-2 mui-col-xs-2 no-padding">
-		<svg viewBox="0 0 100 750">
+        <div  className="mui-col-md-1 mui-col-xs-1 mui-col-lg-1 no-padding">
+		<svg viewBox="0 0 50 750">
 		{renderedSlots}
     </svg> 
 	 </div>

@@ -15,7 +15,7 @@ class CalendarTimeslots extends Component {
     return (
 		<g key={key}>
 		<rect key={key} width={100} y={y} height={this.props.height} fill={fill} stroke={'#E0E0E0'} strokeWidth={1}/>
-		<text x="1" y={y + 8} fontFamily="Verdana" fontSize="6" fill="#707070" >{timeDisplay}</text>
+		<text x="1" y={y + 8} className="mui--text-dark" fontSize="9">{timeDisplay}</text>
 		</g>
 	)
   }
