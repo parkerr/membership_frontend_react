@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { members2 } from '../sampledata';
+//import { members2 } from '../sampledata';
 import girl from '../img/girl.png'
 import boy from '../img/boy.png'
+import request from 'superagent'
 
 class Members extends Component {
 
@@ -11,10 +12,22 @@ class Members extends Component {
   }
 
   componentWillMount() {
-
-      setTimeout(() => {
-        this.setState({...this.state, loading: false, members: members2.data})
-      }, 500)
+          var url = 'https://clubmember.herokuapp.com/api/members'
+    
+         
+	  
+	  
+            request
+            .get(url)
+            .end((err, res) => {
+              if (err) {
+                console.error(err)
+              }
+              else {
+                const parsed = JSON.parse(res.text)
+                this.setState({...this.state, loading: false, members: parsed.data})
+              }
+            })
   }
   
   
