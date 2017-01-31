@@ -29,24 +29,17 @@ class CalendarDate extends Component {
 
   render() {
     return (
-        <div>
-        <div className="mui-row">
-            <div className="mui-col-xs-12 mui-col-md-12">
-                {this.state.date.toDateString() }
-            </div>
-        </div>
-        <div className="mui-row">
-                <button className="mui-col-md-offset-5 mui-col-xs-1 mui-col-md-1 mui-btn--primary mui-col-lg-1 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveback} >
 
-                  <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_left</i>
-                </button>
-                
-                <button className="mui-col-xs-1 mui-col-md-1 mui-btn--primary mui-col-lg-1 mui-btn mui-btn--primary mui-btn--small" onClick={ this.moveforward} >
-
-                  <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_right</i>
-                </button>   
+        <div className="mui-row mui--text-center mui--text-dark mui--text-subhead">
+            <button className="mui-btn mui-btn--small mui-btn--primary mui-btn--flat" onClick={ this.moveback} >
+                <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_left</i>
+            </button> 
+            {this.state.date.toDateString() }
+            <button className="mui-btn mui-btn--small mui-btn--primary mui-btn--flat"  onClick={ this.moveforward} >                
+                <i className="material-icons md-18 vertical-align-middle padding-bottom-3">chevron_right</i>
+            </button>  
         </div>        
-        </div>
+
 
     )
   }
