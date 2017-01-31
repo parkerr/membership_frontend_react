@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { members } from '../sampledata';
+import { members2 } from '../sampledata';
 import girl from '../img/girl.png'
 import boy from '../img/boy.png'
 
@@ -13,7 +13,7 @@ class Members extends Component {
   componentWillMount() {
 
       setTimeout(() => {
-        this.setState({...this.state, loading: false, members: members.members})
+        this.setState({...this.state, loading: false, members: members2.data})
       }, 500)
   }
   
@@ -26,17 +26,21 @@ class Members extends Component {
     <div className="mui-row">
       { this.state.members.map(member => {
         return (
-          <div key={ member.memberID } className="mui-col-md-4">
+          <div key={ member.memberid } className="mui-col-md-4">
             <div className="mui-panel mui-panel-default">
               <div className="mui-panel-heading">
                 <a href="#" className="mui-pull-right mui-text-muted"><em className="fa"></em></a>
               </div>
               <div className="mui-panel-body mui-text-center">
 
-                <img src={ member.memberName === 'Kuldeep'? girl : boy } alt="Contact" className="mui-center-block circle"/>
+                <img src={ member.gender === 'Male'? boy : girl } alt="Contact" className="mui-center-block circle"/>
 
-                <h4>{ member.memberName }</h4>
-                <p>Email:{ member.memberEmail}</p>
+                <h4>{ member.firstname + ' ' + member.lastname} </h4>
+            
+            <p>DOB: { member.dateofbirth.toDateString()}</p>
+            <p>AddressID: { member.addressid}</p>
+            <p>ContactID: { member.contactid}</p>
+            
               </div>
               <div className="mui-panel-footer mui-clearfix">
              
