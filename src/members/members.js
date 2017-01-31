@@ -50,7 +50,7 @@ class Members extends Component {
 
                 <h4>{ member.firstname + ' ' + member.lastname} </h4>
             
-            <p>DOB: { member.dateofbirth.toDateString()}</p>
+            <p>DOB: { member.dateofbirth}</p>
             <p>AddressID: { member.addressid}</p>
             <p>ContactID: { member.contactid}</p>
             
