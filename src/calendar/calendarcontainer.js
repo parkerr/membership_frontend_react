@@ -17,9 +17,12 @@ class CalendarContainer extends Component {
   render() {
       return (
         <div className="mui-container-fluid">
-          <p>Calendar Screen</p>
-          <CalendarDate />
+          
+          
           <div className="mui-panel">
+          <div className="row">
+          <CalendarDate />
+          </div>
 		  <div className="row">
           <CalendarTimebar height={60} padder={0}/>
           <CalendarItemslots height={40} padder={20} interval={40} starttime={920} starthour={9} startminute={20}/>

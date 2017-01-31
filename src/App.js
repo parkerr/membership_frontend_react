@@ -71,7 +71,7 @@ class App extends Component {
   renderNavigation() {
 
       return (
-<div id="sidedrawer" className="mui--no-user-select hide-sidedrawer">
+<div id="sidedrawer" className="mui--no-user-select hide-sidedrawer mui--z2">
 	<div id="sidedrawer-brand" className="mui--appbar-line-height">
 			<span className="mui--text-title">Booker.io</span>
 		</div>
