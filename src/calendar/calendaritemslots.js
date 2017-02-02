@@ -11,12 +11,23 @@ class CalendarTimeslots extends Component {
   }
 
 
-  renderTimeSliceGroup(key, y, timeDisplay, fill) {
+  renderTimeSliceGroup(key, height, timeDisplay, fill) {
     return (
-		<g key={key}>
-		<rect key={key} width={100} y={y} height={this.props.height} fill={fill} stroke={'#E0E0E0'} strokeWidth={1}/>
-		<text x="1" y={y + 8} className="mui--text-dark" fontSize="9">{timeDisplay}</text>
-		</g>
+        
+        <div key={key} style={{"height":height}}>
+        <div style={{"height": "100%","border": "1px solid #E0E0E0"}}>
+        <p className="mui--text-dark-secondary small-font no-padding">{timeDisplay}</p> 
+        </div> 
+        </div>
+	)
+  }
+  renderPadder(key, height, fill) {
+    return (
+        
+        <div key={key} style={{"height":height}}>
+        <div style={{"height": "100%","background":"#2196F3"}}>
+        </div> 
+        </div>
 	)
   }
   
@@ -31,6 +42,11 @@ class CalendarTimeslots extends Component {
 	const renderedSlots = []
 	  //padder is the start position
 	let h = this.props.padder
+      if(h > 0){
+         renderedSlots.push(this.renderPadder(1, h, "#fff"))
+      }
+      
+      
 	var date = new Date()
 	
 	
@@ -41,7 +57,7 @@ class CalendarTimeslots extends Component {
 	
 	for (var i = 2; i <= 100; i++) {
 
-	renderedSlots.push(this.renderTimeSliceGroup(i, (h + 1), (this.addZero(date.getHours().toString()) + ':' + this.addZero(date.getMinutes().toString())), "#fff"))
+	renderedSlots.push(this.renderTimeSliceGroup(i, this.props.interval, (this.addZero(date.getHours().toString()) + ':' + this.addZero(date.getMinutes().toString())), "#fff"))
 	  	h = h + this.props.interval
 		date.setMinutes(date.getMinutes() + this.props.interval)
 	
@@ -51,9 +67,9 @@ class CalendarTimeslots extends Component {
 	    
     return (
         <div  className="mui-col-md-2 mui-col-xs-2 no-padding">
-			<svg viewBox="0 0 100 750">
+
 				{renderedSlots}
-			</svg> 
+
 		</div>
 	)
     

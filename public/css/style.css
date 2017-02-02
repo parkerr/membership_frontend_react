@@ -18,6 +18,12 @@ buttons {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
+.small-font {
+    font-size: 8px;
+}
+.small-font-bold {
+    font-size: 9px;
+}
 
 .vertical-align-middle { 
     vertical-align: middle; 
@@ -29,7 +35,9 @@ buttons {
 
 .no-padding {
   padding-left: 0;
-	padding-right: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 
