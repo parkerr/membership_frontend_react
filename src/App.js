@@ -108,7 +108,6 @@ class App extends Component {
 		<div id="content-wrapper">
             <div className="mui--appbar-height"></div>
 			<div className="mui-container-fluid">
-			<br></br>
                 { this.props.children }
 			</div>	
         </div>

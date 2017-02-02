@@ -40,6 +40,9 @@ buttons {
   padding-bottom: 0;
 }
 
+.modal.in {
+	display: block;
+}
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }

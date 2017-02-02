@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router'
 import App from './App';
+import './bootstrap/css/bootstrap.css';
+import './style.css';
 import Members from './members/members';
 import Setup from './setup/setup';
 import CalendarContainer from './calendar/calendarcontainer'
