@@ -14,7 +14,7 @@ class CalendarTimeslots extends Component {
   renderTimeSliceGroup(key, y, timeDisplay, fill) {
     return (
 		<g key={key}>
-		<rect key={key} width={100} y={y} height={this.props.height} fill={fill} stroke={'#000'} strokeWidth={1}/>
+		<rect key={key} width={100} y={y} height={this.props.height} fill={fill} stroke={'#000'} strokeWidth={0}/>
 		<text x="70" y={y + 15} fontFamily="Verdana" fontSize="8" fill="black" >{timeDisplay}</text>
 		</g>
     )
@@ -45,11 +45,11 @@ class CalendarTimeslots extends Component {
 	
 	for (var i = 2; i <= 30; i++) {
 
-	renderedSlots.push(this.renderTimeSliceGroup(i, h, (this.addZero(date.getHours().toString()) + this.addZero(date.getMinutes().toString())), "#fff"))
+	renderedSlots.push(this.renderTimeSliceGroup(i, h, (this.addZero(date.getHours().toString()) + this.addZero(date.getMinutes().toString())), "#d3d3d3"))
 	  	h = h + this.props.interval
 		date.setMinutes(date.getMinutes() + this.props.interval)
 	
-	if (date.getHours() > 20) { break; }
+	if (i > 20) { break; }
 		
 	}
 	    
