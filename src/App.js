@@ -56,7 +56,7 @@ class App extends Component {
   renderHeader() {
 	  return (   
 	  <header id="header">  
-		<div className="mui-appbar mui--appbar-line-height">
+		<div className="mui-appbar mui--appbar-line-height mui--z2">
 			<div className="mui-container-fluid">
 			<a className="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
 			<a className="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
@@ -71,7 +71,7 @@ class App extends Component {
   renderNavigation() {
 
       return (
-<div id="sidedrawer" className="mui--no-user-select hide-sidedrawer">
+<div id="sidedrawer" className="mui--no-user-select hide-sidedrawer mui--z2">
 	<div id="sidedrawer-brand" className="mui--appbar-line-height">
 			<span className="mui--text-title">Booker.io</span>
 		</div>
@@ -108,7 +108,6 @@ class App extends Component {
 		<div id="content-wrapper">
             <div className="mui--appbar-height"></div>
 			<div className="mui-container-fluid">
-			<br></br>
                 { this.props.children }
 			</div>	
         </div>

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {Rectangle} from 'react-shapes';
-
-
 
 class CalendarTimebar extends Component {
 
@@ -14,11 +11,11 @@ class CalendarTimebar extends Component {
   renderTimeSliceGroup(key, y, timeDisplay) {
     
     return (
-	
-		<g key={key}>
-		<rect key={key} width={100} y={y} height={this.props.height} fill={'#fff'} stroke={'#000'} strokeWidth={1}/>
-		<text x="70" y={y + 15} fontFamily="Verdana" fontSize="8" fill="black" >{timeDisplay}</text>
-		</g>
+        <div key={key} style={{"height":this.props.height}}>
+        <div style={{"height": "100%","border": "1px solid #E0E0E0","background":"#2196F3"}}>
+        <p className="mui--text-light-secondary small-font-bold">{timeDisplay}</p> 
+        </div>   
+        </div>
     )
   }
   
@@ -28,15 +25,15 @@ class CalendarTimebar extends Component {
 	  //padder is the start position
 	  let h = this.props.padder
 	  for (var i = 900; i <= 2000; i=i+100) {
-      renderedSlots.push(this.renderTimeSliceGroup(i, h, i))
-	  		h = h + this.props.height
+      renderedSlots.push(this.renderTimeSliceGroup(i, this.props.height, i))
+
     }
 	    
       return (
-        <div  className="mui-col-md-2 mui-col-xs-2 no-padding">
-		<svg viewBox="0 0 100 750">
+        <div  className="mui-col-md-1 mui-col-xs-1 mui-col-lg-1 no-padding">
+
 		{renderedSlots}
-    </svg> 
+
 	 </div>
   )
     
