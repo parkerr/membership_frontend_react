@@ -98,7 +98,6 @@ class Members extends Component {
     const url = 'https://clubmember.herokuapp.com/api/createmember'
     request.post(url)
     .send({
-      memberid:this.getNextMember(),
       firstname: member.firstname,
       middlename: member.middlename,
       lastname: member.lastname,
