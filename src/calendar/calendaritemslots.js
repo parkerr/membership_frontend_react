@@ -20,7 +20,16 @@ class CalendarTimeslots extends Component {
         </div> 
         </div>
 	)
- }
+  }
+  renderPadder(key, height, fill) {
+    return (
+        
+        <div key={key} style={{"height":height}}>
+        <div style={{"height": "100%","background":"#2196F3"}}>
+        </div> 
+        </div>
+	)
+  }
   
   addZero(i) {
     if (i < 10) {
@@ -48,12 +57,12 @@ class CalendarTimeslots extends Component {
 	
 	for (var i = 2; i <= 100; i++) {
 
-	renderedSlots.push(this.renderTimeSliceGroup(i, h, (this.addZero(date.getHours().toString()) + this.addZero(date.getMinutes().toString())), "#d3d3d3"))
+	renderedSlots.push(this.renderTimeSliceGroup(i, this.props.interval, (this.addZero(date.getHours().toString()) + this.addZero(date.getMinutes().toString())), "#d3d3d3"))
 
 	  	h = h + this.props.interval
 		date.setMinutes(date.getMinutes() + this.props.interval)
 	
-	if (i > 20) { break; }
+	if (date.getHours() > 20) { break; }
 		
 	}
 	    
