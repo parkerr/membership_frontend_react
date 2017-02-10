@@ -57,7 +57,8 @@ class CalendarTimeslots extends Component {
 	
 	for (var i = 2; i <= 100; i++) {
 
-	renderedSlots.push(this.renderTimeSliceGroup(i, this.props.interval, (this.addZero(date.getHours().toString()) + ':' + this.addZero(date.getMinutes().toString())), "#fff"))
+	renderedSlots.push(this.renderTimeSliceGroup(i, this.props.interval, (this.addZero(date.getHours().toString()) + this.addZero(date.getMinutes().toString())), "#d3d3d3"))
+
 	  	h = h + this.props.interval
 		date.setMinutes(date.getMinutes() + this.props.interval)
 	
