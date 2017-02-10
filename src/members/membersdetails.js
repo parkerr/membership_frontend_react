@@ -27,23 +27,23 @@ class MembersDetails extends Component {
     this.props.onChangeGender(e.target.value)
   }    
 
-  render() {      
+  render() {    
     return (
       <form className="mui-form"> 
           <div className="mui-textfield mui-textfield--float-label">
-            <input type="text" value={ this.state.member.firstname} onChange={ this.onChangeFirstname } required/>
+            <input type="text" value={ this.props.member.firstname} onChange={ this.onChangeFirstname } required/>
             <label>Firstname:</label> 
           </div>
           <div className="mui-textfield mui-textfield--float-label">
-            <input type="text" value={ this.state.member.middlename  } onChange={ this.onChangeMiddlename } required/>
+            <input type="text" value={ this.props.member.middlename  } onChange={ this.onChangeMiddlename } required/>
             <label>Middlename:</label> 
           </div>
           <div className="mui-textfield mui-textfield--float-label">
-            <input type="text" value={ this.state.member.lastname} onChange={ this.onChangeLastname } required/>
+            <input type="text" value={ this.props.member.lastname} onChange={ this.onChangeLastname } required/>
             <label>Lastname:</label> 
           </div>
           <div className="mui-select">
-            <select value={ this.state.member.gender } onChange={ this.onChangeGender }>
+            <select value={ this.props.member.gender } onChange={ this.onChangeGender }>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>

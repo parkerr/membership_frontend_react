@@ -22,7 +22,7 @@ class Members extends Component {
   }
   
   addNew() {
-    this.setState({...this.state, editing: {isNew: true, firstname:undefined,middlename:undefined,lastname:undefined}})
+    this.setState({...this.state, editing: {isNew: true, firstname:'',middlename:'',lastname:''}})
   }
   
   delete(member) {
@@ -101,7 +101,10 @@ class Members extends Component {
       firstname: member.firstname,
       middlename: member.middlename,
       lastname: member.lastname,
-      gender: member.gender
+      gender: "M",
+        dobday: "07",
+        dobmonth: "8",
+        dobyear: "1975"
     })
     .end((err, res) => {
       if (err) {
@@ -143,7 +146,7 @@ class Members extends Component {
                                     <li><button className="mui-btn mui-btn--primary mui-btn--flat" onClick={ this.delete.bind(this, member) }>
                                     <i className="material-icons md-18 vertical-align-middle padding-bottom-3">delete</i>
                                     </button>   delete</li>
-                                    <li><button className="mui-btn mui-btn--primary mui-btn--flat" onClick={ this.addNew }>
+                                    <li><button className="mui-btn mui-btn--primary mui-btn--flat" onClick={ this.showEditor.bind(this, member) }>
                                     <i className="material-icons md-18 vertical-align-middle padding-bottom-3">edit</i>
                                     </button>   edit</li>
                                     </ul>
