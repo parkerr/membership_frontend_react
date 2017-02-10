@@ -22,7 +22,7 @@ class Members extends Component {
   }
   
   addNew() {
-    this.setState({...this.state, editing: {isNew: true, firstname:'',middlename:'',lastname:''}})
+    this.setState({...this.state, editing: {isNew: true, firstname:'',middlename:'',lastname:'',gender:'M'}})
   }
   
   delete(member) {
@@ -68,8 +68,7 @@ class Members extends Component {
         if (originalMember.isNew) {
           this.saveNewMember(updatedMember)
         } else {
-          //Update the record
-		  //this.updateQuery(updatedQuery, noteSubject, noteBody)
+          this.saveUpdatedMember(updatedMember)
         }
     }
 
@@ -80,28 +79,15 @@ class Members extends Component {
     }
   }
   
-  getNextMember() {
-    
-      return this.state.members.length + 100
-
-  }
-  
   
   saveNewMember(member) {
-      console.log(member)
-      //Sort out defaults for the backend
-      if(member.firstname === undefined){member.firstname = ''}
-      if(member.middlename === undefined){member.middlename = ''}
-      if(member.lastname === undefined){member.lastname = ''}
-      
-      
     const url = 'https://clubmember.herokuapp.com/api/createmember'
     request.post(url)
     .send({
       firstname: member.firstname,
       middlename: member.middlename,
       lastname: member.lastname,
-      gender: "M",
+      gender: member.gender,
         dobday: "07",
         dobmonth: "8",
         dobyear: "1975"
@@ -116,7 +102,27 @@ class Members extends Component {
     })
   }
   
-  
+  saveUpdatedMember(member) {      
+    const url = 'https://clubmember.herokuapp.com/api/members/' + member.memberid
+    request.put(url)
+    .send({
+      firstname: member.firstname,
+      middlename: member.middlename,
+      lastname: member.lastname,
+      gender: member.gender,
+        dobday: "07",
+        dobmonth: "8",
+        dobyear: "1975"
+    })
+    .end((err, res) => {
+      if (err) {
+        console.error(err)
+      }
+      else {
+        this.getMembers()
+      }
+    })
+  }  
   
   
   
@@ -153,7 +159,7 @@ class Members extends Component {
                                 </div>
                                 </div>
                                 <div className="mui-panel--body mui-text-center">
-                                    <img src={ member.gender === 'Male  '? boy : girl } alt="Contact" className="circle" style={{marginLeft:"40px"}}/>
+                                    <img src={ member.gender === 'M'? boy : girl } alt="Contact" className="circle" style={{marginLeft:"40px"}}/>
                                     <p className="mui--text-dark mui--text-subhead">{ member.firstname + ' ' + member.lastname} </p>
                                 </div>
                             </div>

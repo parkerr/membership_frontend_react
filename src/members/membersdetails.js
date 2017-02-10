@@ -44,8 +44,8 @@ class MembersDetails extends Component {
           </div>
           <div className="mui-select">
             <select value={ this.props.member.gender } onChange={ this.onChangeGender }>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
             </select>
             <label>Gender</label>
            </div>
