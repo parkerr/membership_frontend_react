@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute} from 'react-router'
 import App from './App';
 import './bootstrap/css/bootstrap.css';
 import './style.css';
@@ -43,7 +43,8 @@ class AppRoutes extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={App}>
           { this.renderRoutes() }
-          <Route path="*" component={NoMatch}/>
+          <IndexRoute component={ Members }/>
+          <Route path="*" component={ Members}/>
         </Route>
       </Router>
     )
